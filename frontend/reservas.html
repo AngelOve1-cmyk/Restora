@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Restora | Reservas</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+      <div class="brand">
+        <h2>Restora</h2>
+        <span>Gestión de Restaurantes</span>
+      </div>
+
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="mesas.html">Mesas</a>
+        <a href="reservas.html" class="active">Reservas</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="inventario.html">Inventario</a>
+      </nav>
+
+      <a href="login.html" class="logout">
+        Cerrar sesión
+      </a>
+
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+
+        <div>
+          <h1>Reservas</h1>
+          <p>Gestión de reservas del restaurante</p>
+        </div>
+
+        <button
+          id="btnNuevaReserva"
+          class="small-button"
+        >
+          + Nueva reserva
+        </button>
+
+      </header>
+
+
+      <!-- FORMULARIO -->
+
+      <section
+        id="formularioReserva"
+        class="form-card hidden"
+      >
+
+        <h3>Registrar reserva</h3>
+
+        <form id="formReserva">
+
+          <div class="form-row">
+
+            <div class="form-group">
+              <label for="clienteReserva">
+                Cliente
+              </label>
+
+              <input
+                type="text"
+                id="clienteReserva"
+                placeholder="Nombre del cliente"
+                required
+              >
+            </div>
+
+
+            <div class="form-group">
+              <label for="telefonoReserva">
+                Teléfono
+              </label>
+
+              <input
+                type="text"
+                id="telefonoReserva"
+                placeholder="809-000-0000"
+                required
+              >
+            </div>
+
+
+            <div class="form-group">
+              <label for="personasReserva">
+                Personas
+              </label>
+
+              <input
+                type="number"
+                id="personasReserva"
+                min="1"
+                required
+              >
+            </div>
+
+          </div>
+
+
+          <div class="form-row">
+
+            <div class="form-group">
+              <label for="fechaReserva">
+                Fecha
+              </label>
+
+              <input
+                type="date"
+                id="fechaReserva"
+                required
+              >
+            </div>
+
+
+            <div class="form-group">
+              <label for="horaReserva">
+                Hora
+              </label>
+
+              <input
+                type="time"
+                id="horaReserva"
+                required
+              >
+            </div>
+
+
+            <div class="form-group">
+              <label for="mesaReserva">
+                Mesa
+              </label>
+
+              <select
+                id="mesaReserva"
+                required
+              >
+                <option value="">
+                  Seleccione una mesa
+                </option>
+              </select>
+            </div>
+
+          </div>
+
+
+          <div class="form-row">
+
+            <div class="form-group">
+              <label for="estadoReserva">
+                Estado
+              </label>
+
+              <select
+                id="estadoReserva"
+                required
+              >
+                <option value="Pendiente">
+                  Pendiente
+                </option>
+
+                <option value="Confirmada">
+                  Confirmada
+                </option>
+
+                <option value="Cancelada">
+                  Cancelada
+                </option>
+              </select>
+            </div>
+
+          </div>
+
+
+          <div class="form-actions">
+
+            <button
+              type="submit"
+              class="small-button"
+            >
+              Guardar reserva
+            </button>
+
+            <button
+              type="button"
+              id="btnCancelarReserva"
+              class="secondary-button"
+            >
+              Cancelar
+            </button>
+
+          </div>
+
+        </form>
+
+      </section>
+
+
+      <!-- LISTADO -->
+
+      <section
+        id="listaReservas"
+        class="reservations-grid"
+      >
+        <p>Cargando reservas...</p>
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>

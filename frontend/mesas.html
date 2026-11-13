@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Restora | Mesas</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+      <div class="brand">
+        <h2>Restora</h2>
+        <span>Gestión de Restaurantes</span>
+      </div>
+
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="mesas.html" class="active">Mesas</a>
+        <a href="reservas.html">Reservas</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="inventario.html">Inventario</a>
+      </nav>
+
+      <a href="login.html" class="logout">Cerrar sesión</a>
+
+    </aside>
+
+    <main class="main-content">
+
+      <!-- ENCABEZADO -->
+
+      <header class="topbar">
+
+        <div>
+          <h1>Mesas</h1>
+          <p>Gestión y estado de las mesas del restaurante</p>
+        </div>
+
+        <button id="btnNuevaMesa" class="small-button">
+          + Nueva mesa
+        </button>
+
+      </header>
+
+
+      <!-- FORMULARIO NUEVA MESA -->
+
+      <section id="formularioMesa" class="form-card hidden">
+
+        <h3>Registrar nueva mesa</h3>
+
+        <form id="formMesa">
+
+          <div class="form-row">
+
+            <div class="form-group">
+
+              <label for="numeroMesa">
+                Número de mesa
+              </label>
+
+              <input
+                type="number"
+                id="numeroMesa"
+                min="1"
+                placeholder="Ej: 4"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="capacidadMesa">
+                Capacidad
+              </label>
+
+              <input
+                type="number"
+                id="capacidadMesa"
+                min="1"
+                placeholder="Ej: 4 personas"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="estadoMesa">
+                Estado
+              </label>
+
+              <select id="estadoMesa" required>
+
+                <option value="Disponible">
+                  Disponible
+                </option>
+
+                <option value="Ocupada">
+                  Ocupada
+                </option>
+
+                <option value="Reservada">
+                  Reservada
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-actions">
+
+            <button
+              type="submit"
+              class="small-button"
+            >
+              Guardar mesa
+            </button>
+
+            <button
+              type="button"
+              id="btnCancelarMesa"
+              class="secondary-button"
+            >
+              Cancelar
+            </button>
+
+          </div>
+
+        </form>
+
+      </section>
+
+
+      <!-- LISTADO DE MESAS -->
+
+      <section
+        id="listaMesas"
+        class="tables-grid"
+      >
+
+        <p>Cargando mesas...</p>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>
