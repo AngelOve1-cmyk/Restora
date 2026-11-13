@@ -14,13 +14,14 @@
       <h1>Restora</h1>
       <p class="subtitle">Sistema Inteligente de Gestión para Restaurantes</p>
 
-      <form>
+            <form id="loginForm">
         <div class="form-group">
           <label for="email">Correo electrónico</label>
           <input
             type="email"
             id="email"
             placeholder="correo@ejemplo.com"
+            required
           >
         </div>
 
@@ -30,10 +31,13 @@
             type="password"
             id="password"
             placeholder="Ingresa tu contraseña"
+            required
           >
         </div>
 
-        <button type="button" onclick="window.location.href='dashboard.html'">
+        <p id="loginError" class="login-error" hidden></p>
+
+        <button type="submit" id="btnLogin">
           Iniciar sesión
         </button>
       </form>
@@ -44,6 +48,6 @@
 
     </div>
   </div>
-
+  <script src="js/auth.js"></script>
 </body>
 </html>

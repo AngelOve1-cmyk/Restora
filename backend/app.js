@@ -5,6 +5,7 @@ const cors = require('cors');
 
 const mesasRoutes = require('./routes/mesasRoutes');
 const reservasRoutes = require('./routes/reservasRoutes');
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 const PORT = 3000;
@@ -12,12 +13,14 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
+
 app.get('/', (req, res) => {
   res.send('Servidor de Restora funcionando');
 });
 
 app.use('/api/mesas', mesasRoutes);
 app.use('/api/reservas', reservasRoutes);
+app.use('/api/auth', authRoutes);
 
 app.listen(PORT, () => {
   console.log(`Servidor de Restora ejecutándose en http://localhost:${PORT}`);
